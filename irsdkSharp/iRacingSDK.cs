@@ -120,7 +120,7 @@ namespace iRSDKSharp
             }
         }
 
-        public object GetData(string name)
+        public virtual object GetData(string name)
         {
             if(IsInitialized && Header != null)
             {
