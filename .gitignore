@@ -1,9 +1,3 @@
-/iRacingSdkWrapper.v12.suo
-/iRacingSdkWrapper/iRacingSdkWrapper.v12.suo
-/iRacingSimulator/iRacingSimulator.csproj.user
-**/bin
-**/obj
-/packages
-/.vs
-Samples/**/bin
-Samples/**/obj
+obj/
+bin/
+.vs
