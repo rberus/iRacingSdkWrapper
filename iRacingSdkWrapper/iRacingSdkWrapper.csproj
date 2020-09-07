@@ -43,8 +43,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
-    <Reference Include="YamlDotNet">
-      <HintPath>..\packages\YamlDotNet.3.7.0\lib\net35\YamlDotNet.dll</HintPath>
+    <Reference Include="YamlDotNet, Version=8.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <HintPath>..\..\Solution\packages\YamlDotNet.8.1.2\lib\net35\YamlDotNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +61,7 @@
     <Compile Include="Broadcast\TextureControl.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Bitfields\SessionFlag.cs" />
+    <Compile Include="Interfaces\IiRacingSdkWrapper.cs" />
     <Compile Include="SessionInfo.cs" />
     <Compile Include="TelemetryValue.cs" />
     <Compile Include="TelemetryInfo.cs" />

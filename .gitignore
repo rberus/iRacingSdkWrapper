@@ -1,9 +1,3 @@
-/iRacingSdkWrapper.v12.suo
-/irsdkSharp/obj
-/irsdkSharp/bin
-/iRacingSdkWrapper/obj
-/iRacingSdkWrapper/bin
-/iRacingSdkWrapper/iRacingSdkWrapper.v12.suo
-/iRacingSimulator/iRacingSimulator.csproj.user
-/iRacingSimulator/bin
-/iRacingSimulator/obj
+obj/
+bin/
+.vs

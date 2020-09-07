@@ -11,7 +11,7 @@ namespace iRacingSdkWrapper
     /// <summary>
     /// Provides a useful wrapper of the iRacing SDK.
     /// </summary>
-    public sealed class SdkWrapper
+    public sealed class SdkWrapper : IiRacingSdkWrapper
     {
         #region Fields
 
@@ -88,8 +88,8 @@ namespace iRacingSdkWrapper
                     throw new ArgumentOutOfRangeException("TelemetryUpdateFrequency cannot be more than 60.");
 
                 _TelemetryUpdateFrequency = value;
-                
-                waitTime = (int) Math.Floor(1000f/value) - 1;
+
+                waitTime = (int)Math.Floor(1000f / value) - 1;
             }
         }
 
@@ -197,11 +197,11 @@ namespace iRacingSdkWrapper
         public void RequestSessionInfoUpdate()
         {
             var sessionInfo = sdk.GetSessionInfo();
-            var time = (double) sdk.GetData("SessionTime");
+            var time = (double)sdk.GetData("SessionTime");
             var sessionArgs = new SessionInfoUpdatedEventArgs(sessionInfo, time);
             this.RaiseEvent(OnSessionInfoUpdated, sessionArgs);
         }
-        
+
         private object TryGetSessionNum()
         {
             try
@@ -249,7 +249,7 @@ namespace iRacingSdkWrapper
                         Debug.WriteLine("Session num too many attempts");
                         continue;
                     }
-                    
+
                     // Parse out your own driver Id
                     if (this.DriverId == -1)
                     {
@@ -257,7 +257,7 @@ namespace iRacingSdkWrapper
                     }
 
                     // Get the session time (in seconds) of this update
-                    var time = (double) sdk.GetData("SessionTime");
+                    var time = (double)sdk.GetData("SessionTime");
 
                     // Raise the TelemetryUpdated event and pass along the lap info and session time
                     var telArgs = new TelemetryUpdatedEventArgs(new TelemetryInfo(sdk), time);
@@ -312,7 +312,7 @@ namespace iRacingSdkWrapper
                     Thread.Sleep(ConnectSleepTime);
                 }
             }
-        
+
             sdk.Shutdown();
             _DriverId = -1;
             _IsConnected = false;
